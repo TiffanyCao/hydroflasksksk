@@ -46,8 +46,6 @@ if len(rules) == 0:
     rules['dice'] = test[0:324] + " " + test[677:814] + " " + test[832:1071]
     test = wikipedia.summary("Texas hold'em")
     rules['texas'] = test[0:869]
-    test = wikipedia.summary("Blackjack")
-    rules['blackjack'] = test[0:861]
     test = wikipedia.summary("Roulette")
     rules['roulette'] = test
     test = wikipedia.page("Chinese poker").content
@@ -186,7 +184,7 @@ def purchase():
 @login_required
 def games():
     '''def games(): displays all games in casino'''
-    return render_template("games.html", games="active", slots = rules['slots'], dice = rules['dice'], texas = rules['texas'], blackjack = rules['blackjack'], roulette = rules['roulette'], poker = rules['poker'])
+    return render_template("games.html", games="active", slots = rules['slots'], dice = rules['dice'], texas = rules['texas'], roulette = rules['roulette'], poker = rules['poker'])
 
 #====================================================
 # WHEEL OF FORTUNE AND LOTTERY TICKETS
